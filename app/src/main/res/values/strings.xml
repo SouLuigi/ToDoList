@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="filter">filtrar</string>
+    <string name="newTask">Nova tarefa</string>
+    <string name="o_que_procura">O que procura?</string>
+    <string name="todo_list">Todo List</string>
+</resources>
