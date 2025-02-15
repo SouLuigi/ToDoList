@@ -5,5 +5,6 @@
     <color name="backgroundColor">#ECFFE6</color>
     <color name="buttonColor">#6EC207</color>
     <color name="textColor">#6EC207</color>
+    <color name="GridColor">#AEEA94</color>
 
 </resources>

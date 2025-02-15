@@ -4,61 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemTaskLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="8dp">
 
     <GridLayout
         android:id="@+id/GridLayoutItemTash"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:background="@color/GridColor"
         android:columnCount="2"
+        android:padding="8dp"
         android:rowCount="3"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="197dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textViewTitleTask"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_weight="1"
-            android:text="kotlin"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_columnSpan="1"
+            android:layout_marginBottom="8dp"
+            android:text="Estudar para prova "
+            android:textSize="25sp" />
 
         <com.google.android.material.button.MaterialButton
-
-            />
+            android:id="@+id/buttonDelete"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="1"
+            android:layout_gravity="end"
+            android:text="excluir"
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:id="@+id/textViewCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_columnSpan="1"
+            android:layout_marginBottom="4dp"
             android:text="falculdade"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="20sp" />
 
         <CheckBox
             android:id="@+id/checkBoxCompleted"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="1"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp" />
 
         <TextView
             android:id="@+id/textViewData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="oi"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
+            android:layout_columnSpan="1"
+            android:layout_marginBottom="4dp"
+            android:text="2012.23.12"
+            android:textSize="20sp" />
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
