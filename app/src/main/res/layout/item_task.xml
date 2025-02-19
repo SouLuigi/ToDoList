@@ -28,15 +28,16 @@
             android:text="Estudar para prova "
             android:textSize="25sp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonDelete"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        <ImageView
+            android:id="@+id/imageViewButtonDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="1"
             android:layout_gravity="end"
-            android:text="excluir"
-            android:layout_marginTop="8dp" />
+            android:contentDescription="@string/appbar_scrolling_view_behavior"
+            android:onClick="deleteTask"
+            android:src="@drawable/ic_action_name"
+            tools:ignore="TouchTargetSizeCheck" />
+
 
         <TextView
             android:id="@+id/textViewCategory"
@@ -56,7 +57,7 @@
             android:layout_marginTop="8dp" />
 
         <TextView
-            android:id="@+id/textViewData"
+            android:id="@+id/textViewDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="1"

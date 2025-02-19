@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addNewTask"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".AddNewTask">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutNewTask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/buttonColor"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/editTextTitleTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_rounded"
+            android:hint="@string/nova_tarefa"
+            android:padding="12dp"
+            android:textSize="18sp" />
+
+
+        <EditText
+            android:id="@+id/editTextData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_rounded"
+            android:focusable="false"
+            android:hint="DD/MM/YYYY"
+            android:padding="10dp"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSaveNewTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="@color/GridColor"
+            android:padding="8dp"
+            android:text="@string/salvar"
+
+            />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
