@@ -10,12 +10,15 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.button.MaterialButton
 import java.text.SimpleDateFormat
 import java.util.Locale
 
 class AddNewTask : DialogFragment() {
+
+    var listener: AddTaskListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +31,7 @@ class AddNewTask : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val buttonSaveNewTask: MaterialButton = view.findViewById(R.id.buttonSaveNewTask)
         val editTextData: EditText = view.findViewById(R.id.editTextData)
         val spinner: Spinner = view.findViewById(R.id.spinnerCategory)
         val options = listOf("Trabalho", "Estudo", "Pessoal")
@@ -67,5 +71,33 @@ class AddNewTask : DialogFragment() {
             )
             datePicker.show()
         }
+
+        buttonSaveNewTask.setOnClickListener {
+            val title = view.findViewById<EditText>(R.id.editTextTitleTask).text.toString()
+            val category = view.findViewById<Spinner>(R.id.spinnerCategory).selectedItem.toString()
+            val date = view.findViewById<EditText>(R.id.editTextData).text.toString()
+
+            if (title.isNotBlank() && date.isNotBlank()) {
+                val newTask = Task(
+                    id = System.currentTimeMillis().toInt(),
+                    title = title,
+                    date = date,
+                    category = category
+                )
+                listener?.onTaskAdded(newTask)
+                dismiss()
+            } else {
+                Toast.makeText(requireContext(), "Preencha todos os campos!", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+    }
+
+    fun setAddTaskListener(listener: MainActivity) {
+        this.listener = listener
+    }
+
+    interface AddTaskListener {
+        fun onTaskAdded(task: Task)
     }
 }

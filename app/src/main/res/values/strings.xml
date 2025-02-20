@@ -7,4 +7,5 @@
     <string name="title_activity_add_new_task">AddNewTask</string>
     <string name="nova_tarefa">Nova tarefa</string>
     <string name="salvar">Salvar</string>
+    <string name="delete_task" />
 </resources>

@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutNewTask"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="match_parent"
         android:background="@color/buttonColor"
         android:orientation="vertical"
@@ -22,35 +22,45 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:layout_marginHorizontal="10dp"
             android:background="@drawable/edittext_rounded"
             android:hint="@string/nova_tarefa"
+            android:textColorHint="@color/buttonColor"
             android:padding="12dp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@color/buttonColor"/>
 
 
         <EditText
             android:id="@+id/editTextData"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:layout_marginHorizontal="10dp"
             android:background="@drawable/edittext_rounded"
             android:focusable="false"
             android:hint="DD/MM/YYYY"
+            android:textColorHint="@color/buttonColor"
             android:padding="10dp"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textColor="@color/buttonColor"/>
 
         <Spinner
             android:id="@+id/spinnerCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginHorizontal="9dp"
             android:padding="10dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonSaveNewTask"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:layout_gravity="end"
             android:backgroundTint="@color/GridColor"
+            android:textColor="@color/white"
             android:padding="8dp"
             android:text="@string/salvar"
 

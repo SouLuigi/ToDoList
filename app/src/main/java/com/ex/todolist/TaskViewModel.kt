@@ -15,8 +15,8 @@ class TaskViewModel : ViewModel() {
 
     fun addTask(title: String, date: String, category: String) {
         val currentTasks = _tasks.value ?: emptyList()
-        val newId = (currentTasks.maxOfOrNull { it.id } ?: 0) + 1
-        val newTask = Task(id = newId, title = title, date = date, category = category)
+        val newId = if (currentTasks.isNotEmpty()) currentTasks.maxOf { it.id } + 1 else 1
+        val newTask = Task(id = newId, title = title, category = category, date = date, isComplete = false)
         _tasks.value = currentTasks + newTask
     }
 

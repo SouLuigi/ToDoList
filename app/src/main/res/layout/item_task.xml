@@ -5,65 +5,72 @@
     android:id="@+id/itemTaskLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:padding="12dp"
+    android:background="@color/GridColor">
 
     <GridLayout
-        android:id="@+id/GridLayoutItemTash"
+        android:id="@+id/GridLayoutItemTask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/GridColor"
         android:columnCount="2"
-        android:padding="8dp"
         android:rowCount="3"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="8dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Título da Tarefa -->
         <TextView
             android:id="@+id/textViewTitleTask"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_columnSpan="1"
-            android:layout_marginBottom="8dp"
-            android:text="Estudar para prova "
-            android:textSize="25sp" />
+            android:layout_gravity="start"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingBottom="4dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_weight="1"/>
 
+        <!-- Botão de Deletar -->
         <ImageView
             android:id="@+id/imageViewButtonDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_gravity="end"
-            android:contentDescription="@string/appbar_scrolling_view_behavior"
-            android:onClick="deleteTask"
+            android:padding="4dp"
             android:src="@drawable/ic_action_name"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:contentDescription="@string/delete_task" />
 
-
+        <!-- Categoria da Tarefa -->
         <TextView
             android:id="@+id/textViewCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@android:color/darker_gray"
             android:layout_columnSpan="1"
-            android:layout_marginBottom="4dp"
-            android:text="falculdade"
-            android:textSize="20sp" />
+            android:paddingTop="4dp"/>
 
+        <!-- Checkbox de Conclusão -->
         <CheckBox
             android:id="@+id/checkBoxCompleted"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="1"
             android:layout_gravity="end"
-            android:layout_marginTop="8dp" />
+            android:layout_columnSpan="1"
+            android:layout_marginTop="8dp"/>
 
+        <!-- Data da Tarefa -->
         <TextView
             android:id="@+id/textViewDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="1"
-            android:layout_marginBottom="4dp"
-            android:text="2012.23.12"
-            android:textSize="20sp" />
+            android:textSize="18sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_columnSpan="2"
+            android:paddingTop="4dp"/>
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

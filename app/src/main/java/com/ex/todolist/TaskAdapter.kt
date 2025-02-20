@@ -7,25 +7,19 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class TaskAdapter(
-    var tasks: List<Task>,
-    private val onTaskClicked: (Task) -> Unit
-) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+class TaskAdapter(var tasks: List<Task>) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+
+    fun updateTasks(newTasks: List<Task>) {
+        tasks = newTasks
+        notifyDataSetChanged()
+    }
+
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val textViewTitleTask: TextView = itemView.findViewById(R.id.textViewTitleTask)
-        private val textViewCategory: TextView = itemView.findViewById(R.id.textViewCategory)
-        private val textViewDate: TextView = itemView.findViewById(R.id.textViewDate)
-        private val checkBoxCompleted: CheckBox = itemView.findViewById(R.id.checkBoxCompleted)
-
         fun bind(task: Task) {
-            textViewTitleTask.text = task.title
-            textViewCategory.text = task.category
-            textViewDate.text = task.date.toString()
-            checkBoxCompleted.isChecked = task.isComplete
-
-            checkBoxCompleted.setOnCheckedChangeListener { _, isChecked ->
-                onTaskClicked(task.copy(isComplete = isChecked))
-            }
+            itemView.findViewById<TextView>(R.id.textViewTitleTask).text = task.title
+            itemView.findViewById<TextView>(R.id.textViewCategory).text = task.category
+            itemView.findViewById<TextView>(R.id.textViewDate).text = task.date
+            itemView.findViewById<CheckBox>(R.id.checkBoxCompleted).isChecked = task.isComplete
         }
     }
 
@@ -38,5 +32,5 @@ class TaskAdapter(
         holder.bind(tasks[position])
     }
 
-    override fun getItemCount(): Int = tasks.size
+    override fun getItemCount() = tasks.size
 }
