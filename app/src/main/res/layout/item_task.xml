@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="12dp"
-    android:background="@color/GridColor">
+    >
 
     <GridLayout
         android:id="@+id/GridLayoutItemTask"
@@ -15,6 +15,7 @@
         android:columnCount="2"
         android:rowCount="3"
         android:padding="8dp"
+        android:background="@drawable/rounded_grid_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,12 +23,12 @@
         <!-- Título da Tarefa -->
         <TextView
             android:id="@+id/textViewTitleTask"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnSpan="1"
             android:layout_gravity="start"
+            android:textColor="@color/text_tertiary"
             android:textSize="22sp"
-            android:textStyle="bold"
             android:paddingBottom="4dp"
             android:maxLines="1"
             android:ellipsize="end"
@@ -49,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/text_tertiary"
             android:layout_columnSpan="1"
             android:paddingTop="4dp"/>
 
@@ -68,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/text_tertiary"
             android:layout_columnSpan="2"
             android:paddingTop="4dp"/>
     </GridLayout>

@@ -5,18 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textViewTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        style="@style/textViewMainActivityMain"
         android:text="@string/todo_list"
-        android:textColor="@color/textColor"
-        android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,12 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:hint="@string/o_que_procura"
-        android:textColorHint="@color/textColor"
+        android:textColorHint="@color/text_primary"
         app:boxCornerRadiusBottomEnd="50dp"
         app:boxCornerRadiusBottomStart="50dp"
         app:boxCornerRadiusTopEnd="50dp"
         app:boxCornerRadiusTopStart="50dp"
-        app:boxStrokeColor="@color/textColor"
+        app:boxStrokeColor="@color/text_primary"
         app:layout_constraintBottom_toTopOf="@id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,12 +53,12 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonNewTask"
-            style="@style/buttonStyle"
+            style="@style/buttonStyleActivityMain"
             android:text="@string/newTask" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonFilter"
-            style="@style/buttonStyle"
+            style="@style/buttonStyleActivityMain"
             android:text="@string/filter" />
     </LinearLayout>
 

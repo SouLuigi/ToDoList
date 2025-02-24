@@ -2,5 +2,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <corners android:radius="16dp"/>  <!-- Arredonda os cantos -->
     <solid android:color="@color/white"/>  <!-- Cor de fundo -->
-    <stroke android:width="2dp" android:color="@color/GridColor"/>  <!-- Borda fina -->
+    <stroke android:width="2dp" android:color="@color/button_primary"/>  <!-- Borda fina -->
 </shape>

@@ -14,6 +14,10 @@ class TaskViewModel : ViewModel() {
     }
 
     fun addTask(title: String, date: String, category: String) {
+        if (title.isBlank() || date.isBlank() || category.isBlank()) {
+            throw IllegalArgumentException("Todos os campos devem ser preenchidos.")
+        }
+
         val currentTasks = _tasks.value ?: emptyList()
         val newId = if (currentTasks.isNotEmpty()) currentTasks.maxOf { it.id } + 1 else 1
         val newTask = Task(id = newId, title = title, category = category, date = date, isComplete = false)
@@ -32,5 +36,23 @@ class TaskViewModel : ViewModel() {
     fun deleteTask(task: Task) {
         val currentTasks = _tasks.value ?: emptyList()
         _tasks.value = currentTasks.filter { it.id != task.id }
+    }
+
+    // Ordenar tarefas por data
+    fun sortTasksByDate() {
+        val currentTasks = _tasks.value ?: emptyList()
+        _tasks.value = currentTasks.sortedBy { it.date }
+    }
+
+    // Ordenar tarefas por categoria
+    fun sortTasksByCategory() {
+        val currentTasks = _tasks.value ?: emptyList()
+        _tasks.value = currentTasks.sortedBy { it.category }
+    }
+
+    // Ordenar tarefas por conclusão
+    fun sortTasksByCompletion() {
+        val currentTasks = _tasks.value ?: emptyList()
+        _tasks.value = currentTasks.sortedBy { it.isComplete }
     }
 }

@@ -9,64 +9,46 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutNewTask"
-        android:layout_width="400dp"
-        android:layout_height="match_parent"
-        android:background="@color/buttonColor"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_linear_background"
         android:orientation="vertical"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
 
         <EditText
             android:id="@+id/editTextTitleTask"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginHorizontal="10dp"
-            android:background="@drawable/edittext_rounded"
+            style="@style/editTextAddNewTask"
             android:hint="@string/nova_tarefa"
-            android:textColorHint="@color/buttonColor"
-            android:padding="12dp"
-            android:textSize="18sp"
-            android:textColor="@color/buttonColor"/>
-
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColorHint="@color/text_primary" />
 
         <EditText
             android:id="@+id/editTextData"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginHorizontal="10dp"
-            android:background="@drawable/edittext_rounded"
+            style="@style/editTextAddNewTask"
             android:focusable="false"
-            android:hint="DD/MM/YYYY"
-            android:textColorHint="@color/buttonColor"
-            android:padding="10dp"
-            android:textSize="18sp"
-            android:textColor="@color/buttonColor"/>
+            android:hint="@string/dd_mm_yyyy"
+            android:importantForAutofill="no"
+            android:inputType="date"
+            android:textColorHint="@color/text_primary" />
 
         <Spinner
             android:id="@+id/spinnerCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginHorizontal="9dp"
+            android:background="@drawable/spinner_background"
             android:padding="10dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonSaveNewTask"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_gravity="end"
-            android:backgroundTint="@color/GridColor"
-            android:textColor="@color/white"
-            android:padding="8dp"
-            android:text="@string/salvar"
-
-            />
+            style="@style/buttonStyleAddNewTAsk"
+            android:text="@string/salvar" />
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

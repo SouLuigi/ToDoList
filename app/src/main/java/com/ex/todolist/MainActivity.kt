@@ -9,8 +9,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.snackbar.Snackbar
 
-abstract class MainActivity : AppCompatActivity(), AddNewTask.AddTaskListener {
+class MainActivity : AppCompatActivity(), AddNewTask.AddTaskListener {
 
     private lateinit var taskAdapter: TaskAdapter
     private val taskViewModel: TaskViewModel by viewModels()
@@ -24,27 +25,34 @@ abstract class MainActivity : AppCompatActivity(), AddNewTask.AddTaskListener {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewTasks)
 
-        taskAdapter = TaskAdapter(emptyList())
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewTasks)
+        taskAdapter = TaskAdapter(
+            emptyList(),
+            onTaskClickListener = { task ->
+                Snackbar.make(recyclerView, "Tarefa clicada: ${task.title}", Snackbar.LENGTH_SHORT).show()
+            },
+            onCheckBoxClickListener = { task, isChecked ->
+                taskViewModel.toggleTaskCompletion(task)
+            }
+        )
         recyclerView.adapter = taskAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         taskViewModel.tasks.observe(this) { tasks ->
-            taskAdapter.tasks = tasks
-            taskAdapter.notifyDataSetChanged()
+            taskAdapter.updateTasks(tasks)
         }
+
         val buttonNewTask: MaterialButton = findViewById(R.id.buttonNewTask)
         buttonNewTask.setOnClickListener {
-            buttonNewTask.setOnClickListener {
-                val dialog = AddNewTask()
-                dialog.listener = this
-                dialog.show(supportFragmentManager, "AddNewTask")
-            }
+            val dialog = AddNewTask()
+            dialog.listener = this
+            dialog.show(supportFragmentManager, "AddNewTask")
         }
     }
 
-    fun onTaskAdded(title: String, category: String, date: String) {
-        taskViewModel.addTask(title, category, date)
+    override fun onTaskAdded(task: Task) {
+        taskViewModel.addTask(task.title, task.date, task.category)
+        Snackbar.make(findViewById(R.id.main), "Tarefa adicionada!", Snackbar.LENGTH_SHORT).show()
     }
 }

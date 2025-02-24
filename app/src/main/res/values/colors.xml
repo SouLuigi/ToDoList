@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="backgroundColor">#ECFFE6</color>
-    <color name="buttonColor">#6EC207</color>
-    <color name="textColor">#6EC207</color>
+
     <color name="GridColor">#AEEA94</color>
 
+    <!-- 🎨 Cores Primárias -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 🎨 Cores de Fundo -->
+    <color name="background">#ECFFE6</color>
+    <color name="background_layout">#AEEA94</color>
+
+    <!-- 🎨 Cores de Texto -->
+    <color name="text_primary">#6EC207</color>
+    <color name="text_secondary">#FFFFFFFF</color>
+    <color name="text_tertiary">#FF000000</color>
+
+    <!-- 🎨 Cores dos botões -->
+    <color name="button_primary">#6EC207</color>
+    <color name="button_secondary"></color>
 </resources>
