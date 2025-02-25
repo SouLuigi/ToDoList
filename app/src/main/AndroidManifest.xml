@@ -12,11 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDoList"
         tools:targetApi="31">
-        <activity
-            android:name=".AddNewTask"
-            android:exported="false"
-            android:label="@string/title_activity_add_new_task"
-            android:theme="@style/Theme.ToDoList" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

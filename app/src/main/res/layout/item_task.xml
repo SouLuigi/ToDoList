@@ -41,7 +41,7 @@
             android:layout_height="32dp"
             android:layout_gravity="end"
             android:padding="4dp"
-            android:src="@drawable/ic_action_name"
+
             android:contentDescription="@string/delete_task" />
 
         <!-- Categoria da Tarefa -->

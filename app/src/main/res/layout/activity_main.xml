@@ -74,4 +74,59 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
+    <FrameLayout
+        android:id="@+id/frameLayoutAddNewTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        >
+
+        <LinearLayout
+            android:id="@+id/linearLayoutNewTask"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_linear_background"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/editTextTitleTask"
+                style="@style/editTextAddNewTask"
+                android:hint="@string/nova_tarefa"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textColorHint="@color/text_primary" />
+
+            <EditText
+                android:id="@+id/editTextData"
+                style="@style/editTextAddNewTask"
+                android:focusable="false"
+                android:hint="@string/dd_mm_yyyy"
+                android:importantForAutofill="no"
+                android:inputType="date"
+                android:textColorHint="@color/text_primary" />
+
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/spinner_background"
+                android:padding="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSaveNewTask"
+                style="@style/buttonStyleAddNewTAsk"
+                android:text="@string/salvar" />
+
+        </LinearLayout>
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
